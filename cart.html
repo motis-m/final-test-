@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车 - MyShop</title> <!-- 页面标题显示在浏览器标签页 -->
+    <link rel="stylesheet" href="css/style.css"> <!-- 引入样式文件 -->
+</head>
+<body>
+<header class="top">
+    <a href="index.html" class="logo">MyShop</a>
+    <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="user.html">个人中心</a> <!-- 购物车页面导航包含个人中心 -->
+    </nav>
+</header>
+
+<!-- 购物车主容器 -->
+<div class="cart-container"> <!-- 使用cart-container类应用CSS样式 -->
+    <h2>我的购物车</h2> <!-- 页面主标题 -->
+    
+    <!-- 购物车商品列表容器 -->
+    <!-- id="cartList"用于JavaScript操作，showCart()函数会在这里显示商品 -->
+    <div id="cartList"></div>
+    
+    <!-- 购物车汇总区域 -->
+    <div class="cart-summary">
+        商品总价：￥<span id="total">0</span> <!-- id="total"用于显示总价 -->
+        <!-- onclick调用goPay()函数跳转到结算页面 -->
+        <button onclick="goPay()">去结算</button>
+        <!-- onclick调用clearCart()函数清空购物车，style定义内联样式 -->
+        <button onclick="clearCart()" style="background:#999;">清空购物车</button>
+    </div>
+</div>
+
+<!-- 引入JavaScript主文件 -->
+<script src="js/main.js"></script>
+
+<!-- 页面特定的JavaScript代码 -->
+<script>
+// ===== 清空购物车函数 =====
+function clearCart() {
+    // confirm()显示确认对话框，用户点击确定返回true，取消返回false
+    if (confirm("确定要清空购物车吗？")) {
+        // localStorage.removeItem()移除指定的本地存储项
+        localStorage.removeItem("cart"); // 移除cart数据
+        showCart(); // 调用showCart()重新显示购物车（此时为空）
+        updateCartCount(); // 更新购物车数量显示（变为0）
+    }
+    // 如果用户点击取消，不执行任何操作
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册 - MyShop</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- 引入公共样式 -->
+</head>
+<body>
+<header class="top">
+    <a href="index.html" class="logo">MyShop</a> <!-- 点击logo返回首页 -->
+    <nav class="nav">
+        <a href="index.html">首页</a> <!-- 首页导航 -->
+        <!-- 登录页不需要购物车链接，已删除 -->
+    </nav>
+</header>
+
+<!-- 登录注册表单容器 -->
+<!-- style属性定义内联样式，max-width最大宽度，margin外边距，auto自动水平居中 -->
+<div style="max-width:400px;margin:50px auto;padding:30px;background:white;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center;">用户登录</h2> <!-- text-align文本对齐方式 -->
+    
+    <!-- 登录表单 -->
+    <!-- type="text"文本输入框，id用于JavaScript操作，placeholder占位符文本 -->
+    <input type="text" id="loginUsername" placeholder="请输入用户名" style="width:100%;padding:10px;margin:10px 0;border:1px solid #ddd;border-radius:4px;">
+    <!-- type="password"密码输入框，输入内容会被隐藏 -->
+    <input type="password" id="loginPassword" placeholder="请输入密码" style="width:100%;padding:10px;margin:10px 0;border:1px solid #ddd;border-radius:4px;">
+    <!-- onclick调用login()函数，cursor:pointer鼠标悬停时显示手型指针 -->
+    <button onclick="login()" style="width:100%;padding:12px;background:red;color:white;border:none;border-radius:4px;cursor:pointer;font-size:16px;margin:20px 0 30px;">
+        登录
+    </button>
+    
+    <!-- 分隔线 -->
+    <!-- hr水平线，border:none移除默认边框，border-top设置顶部边框 -->
+    <hr style="border:none;border-top:1px solid #eee;">
+    
+    <h2 style="text-align:center;margin-top:40px;">新用户注册</h2>
+    
+    <!-- 注册表单 -->
+    <input type="text" id="regUsername" placeholder="请输入用户名" style="width:100%;padding:10px;margin:10px 0;border:1px solid #ddd;border-radius:4px;">
+    <input type="password" id="regPassword" placeholder="请输入密码" style="width:100%;padding:10px;margin:10px 0;border:1px solid #ddd;border-radius:4px;">
+    <!-- 确认密码输入框 -->
+    <input type="password" id="regConfirm" placeholder="请确认密码" style="width:100%;padding:10px;margin:10px 0;border:1px solid #ddd;border-radius:4px;">
+    <!-- 注册按钮背景色为灰色，与登录按钮区分 -->
+    <button onclick="register()" style="width:100%;padding:12px;background:#666;color:white;border:none;border-radius:4px;cursor:pointer;font-size:16px;margin:20px 0;">
+        注册
+    </button>
+</div>
+
+<script>
+// ===== 登录函数 =====
+function login() {
+    // document.getElementById()通过id获取DOM元素，.value获取输入框的值
+    var username = document.getElementById('loginUsername').value;
+    var password = document.getElementById('loginPassword').value;
+    
+    // 验证输入是否为空
+    // !逻辑非运算符，将值转换为布尔值并取反
+    if (!username || !password) {
+        alert('请输入用户名和密码！'); // alert()弹出警告框
+        return; // 如果验证失败，退出函数
+    }
+    
+    // 简单验证用户名长度（实际项目需要后端验证）
+    if (username.length < 3) { // .length获取字符串长度
+        alert('用户名至少3个字符！');
+        return;
+    }
+    
+    // localStorage.setItem()将数据存储到浏览器本地存储
+    // 'username'是键，username是值
+    localStorage.setItem('username', username);
+    alert('登录成功！');
+    window.location.href = 'index.html'; // 跳转到首页
+}
+
+// ===== 注册函数 =====
+function register() {
+    var username = document.getElementById('regUsername').value;
+    var password = document.getElementById('regPassword').value;
+    var confirm = document.getElementById('regConfirm').value; // 获取确认密码
+    
+    // 验证所有字段是否填写
+    if (!username || !password || !confirm) {
+        alert('请填写所有字段！');
+        return;
+    }
+    
+    // 验证两次输入的密码是否一致
+    // !==严格不相等运算符，比较值和类型
+    if (password !== confirm) {
+        alert('两次输入的密码不一致！');
+        return;
+    }
+    
+    // 验证用户名长度
+    if (username.length < 3) {
+        alert('用户名至少3个字符！');
+        return;
+    }
+    
+    // 验证密码长度
+    if (password.length < 6) {
+        alert('密码至少6个字符！');
+        return;
+    }
+    
+    // 保存用户信息（实际项目中需要发送到后端服务器）
+    localStorage.setItem('username', username);
+    alert('注册成功！已自动登录。');
+    window.location.href = 'index.html'; // 注册成功后自动跳转到首页
+}
+</script>
+</body>
+</html>

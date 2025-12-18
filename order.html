@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>提交订单 - MyShop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+    <a href="index.html" class="logo">MyShop</a>
+    <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="user.html">个人中心</a> <!-- 订单页面导航 -->
+    </nav>
+</header>
+
+<!-- 订单表单容器 -->
+<div style="max-width:800px;margin:20px auto;padding:20px;background:white;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+    <h2>提交订单</h2>
+    
+    <!-- 订单商品显示区域 -->
+    <div id="orderItems" style="margin-bottom:20px;border-bottom:1px solid #eee;padding-bottom:20px;">
+        <!-- 订单商品会通过JavaScript动态显示在这里 -->
+    </div>
+    
+    <!-- 订单信息输入区域 -->
+    <div>
+        <h3>订单信息</h3>
+        <!-- 收货地址输入框 -->
+        <p>收货地址：<input type="text" placeholder="请输入收货地址" style="width:300px;padding:5px;"></p>
+        <!-- 联系电话输入框 -->
+        <p>联系电话：<input type="text" placeholder="请输入联系电话" style="width:300px;padding:5px;"></p>
+    </div>
+    
+    <!-- 订单汇总和提交区域 -->
+    <div style="text-align:right;margin-top:30px;">
+        <!-- 订单总额显示 -->
+        <p>订单总额：<span id="orderTotal" style="color:red;font-size:20px;font-weight:bold;">0</span>元</

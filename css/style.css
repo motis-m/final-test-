@@ -1,0 +1,262 @@
+/* CSS注释：定义整个页面的基础样式 */
+body { /* body选择器，应用于整个页面主体 */
+    margin: 0; /* 外边距设为0，移除默认边距 */
+    font-family: Arial; /* 字体设置为Arial */
+    background: #f5f5f5; /* 背景颜色，十六进制颜色值 */
+}
+
+/* 顶部导航栏样式 */
+.top { /* .top类选择器，选择class="top"的元素 */
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中对齐子元素 */
+    padding: 10px 30px; /* 内边距：上下10px，左右30px */
+    background: #fff; /* 白色背景，fff是#ffffff的简写 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影效果：x偏移0，y偏移2px，模糊5px，透明度0.1的黑色 */
+}
+
+.logo { /* logo类选择器 */
+    font-size: 22px; /* 字体大小22像素 */
+    color: red; /* 文字颜色红色 */
+    font-weight: bold; /* 字体粗细：粗体 */
+    text-decoration: none; /* 移除下划线装饰 */
+}
+
+.search-box { /* 搜索框样式 */
+    flex: 1; /* Flexbox属性：元素占据剩余空间 */
+    text-align: center; /* 文本水平居中 */
+}
+
+.search-box input { /* 搜索框内的input元素 */
+    width: 300px; /* 宽度300像素 */
+    height: 30px; /* 高度30像素 */
+    padding: 0 10px; /* 内边距：上下0，左右10px */
+    border: 1px solid #ddd; /* 边框：1像素实线，浅灰色 */
+    border-radius: 4px 0 0 4px; /* 圆角：左上和左下4px */
+}
+
+.search-box button { /* 搜索按钮 */
+    height: 34px; /* 高度34像素 */
+    padding: 0 15px; /* 内边距：上下0，左右15px */
+    border: 1px solid #ddd; /* 边框 */
+    border-left: none; /* 左边框设为无 */
+    background: #f0f0f0; /* 背景色浅灰色 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+    border-radius: 0 4px 4px 0; /* 圆角：右上和右下4px */
+}
+
+.nav a { /* 导航栏内的链接 */
+    margin-left: 15px; /* 左外边距15像素 */
+    text-decoration: none; /* 移除下划线 */
+    color: #333; /* 文字颜色深灰色 */
+}
+
+.nav a:hover { /* 鼠标悬停时的导航链接 */
+    color: red; /* 悬停时变为红色 */
+}
+
+/* 主体布局容器 */
+.container { /* 主容器 */
+    display: flex; /* 使用Flexbox布局 */
+    margin: 20px; /* 外边距20像素 */
+    gap: 20px; /* 子元素之间的间隙20像素 */
+}
+
+/* 分类侧边栏 */
+.category { /* 分类区域 */
+    width: 180px; /* 固定宽度180像素 */
+    background: #fff; /* 白色背景 */
+    padding: 15px; /* 内边距15像素 */
+    border-radius: 5px; /* 圆角5像素 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 轻微阴影 */
+}
+
+.category h3 { /* 分类标题 */
+    margin-top: 0; /* 上外边距为0 */
+    border-bottom: 1px solid #eee; /* 底部边框：1像素实线，浅灰色 */
+    padding-bottom: 10px; /* 底部内边距10像素 */
+}
+
+.category a { /* 分类链接 */
+    display: block; /* 显示为块级元素（独占一行） */
+    padding: 8px; /* 内边距8像素 */
+    color: #333; /* 文字颜色 */
+    text-decoration: none; /* 移除下划线 */
+    border-radius: 3px; /* 圆角3像素 */
+}
+
+.category a:hover { /* 分类链接悬停效果 */
+    background: #f5f5f5; /* 悬停时背景变浅灰色 */
+}
+
+/* 轮播图区域 */
+.aa { /* 轮播图容器 */
+    flex: 1; /* 占据剩余空间 */
+}
+
+.aa img { /* 轮播图图片 */
+    width: 100%; /* 宽度100%填充容器 */
+    height: 300px; /* 固定高度300像素 */
+    object-fit: cover; /* 图片填充方式：覆盖并裁剪 */
+    border-radius: 5px; /* 圆角5像素 */
+}
+
+/* 推荐商品区域 */
+.recommend { /* 推荐区域 */
+    padding: 20px; /* 内边距20像素 */
+}
+
+.goods { /* 商品容器 */
+    display: flex; /* Flexbox布局 */
+    gap: 20px; /* 子元素间隙20像素 */
+    margin-top: 20px; /* 上外边距20像素 */
+}
+
+.item { /* 单个商品项 */
+    width: 200px; /* 固定宽度200像素 */
+    background: #fff; /* 白色背景 */
+    border: 1px solid #ddd; /* 边框：1像素实线浅灰色 */
+    padding: 15px; /* 内边距15像素 */
+    text-align: center; /* 文本居中对齐 */
+    border-radius: 5px; /* 圆角5像素 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+    transition: transform 0.3s; /* 变换动画效果，持续0.3秒 */
+}
+
+.item:hover { /* 商品项悬停效果 */
+    transform: translateY(-5px); /* 向上移动5像素 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* 阴影效果 */
+}
+
+.item img { /* 商品图片 */
+    width: 100%; /* 宽度100%填充容器 */
+    height: 150px; /* 固定高度150像素 */
+    object-fit: cover; /* 图片填充方式：覆盖并裁剪 */
+    border-radius: 3px; /* 圆角3像素 */
+}
+
+.item p { /* 商品名称 */
+    margin: 10px 0 5px; /* 外边距：上10px，下5px，左右0 */
+    font-weight: bold; /* 字体加粗 */
+}
+
+.item span { /* 商品价格 */
+    color: red; /* 红色文字 */
+    font-weight: bold; /* 字体加粗 */
+    font-size: 18px; /* 字体大小18像素 */
+}
+
+/* 购物车页面样式 */
+.cart-container { /* 购物车容器 */
+    padding: 20px; /* 内边距20像素 */
+    background: #fff; /* 白色背景 */
+    margin: 20px; /* 外边距20像素 */
+    border-radius: 5px; /* 圆角5像素 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 阴影效果 */
+}
+
+.cart-item { /* 购物车单个商品项 */
+    display: flex; /* Flexbox布局 */
+    gap: 15px; /* 子元素间隙15像素 */
+    border-bottom: 1px solid #eee; /* 底部边框：1像素实线浅灰色 */
+    padding: 15px 0; /* 内边距：上下15px，左右0 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.cart-item img { /* 购物车商品图片 */
+    width: 80px; /* 固定宽度80像素 */
+    height: 80px; /* 固定高度80像素 */
+    object-fit: cover; /* 图片填充方式：覆盖并裁剪 */
+    border-radius: 3px; /* 圆角3像素 */
+}
+
+.cart-info { /* 购物车商品信息 */
+    flex: 1; /* 占据剩余空间 */
+}
+
+.cart-title { /* 购物车商品标题 */
+    margin: 0 0 5px 0; /* 外边距：下5px */
+    font-weight: bold; /* 字体加粗 */
+}
+
+.cart-price { /* 购物车商品价格 */
+    color: red; /* 红色文字 */
+    font-weight: bold; /* 字体加粗 */
+}
+
+.cart-summary { /* 购物车汇总区域 */
+    text-align: right; /* 文本右对齐 */
+    margin-top: 20px; /* 上外边距20像素 */
+    padding-top: 20px; /* 上内边距20像素 */
+    border-top: 2px solid #eee; /* 顶部边框：2像素实线浅灰色 */
+}
+
+.cart-summary button { /* 购物车按钮 */
+    margin-left: 20px; /* 左外边距20像素 */
+    padding: 10px 20px; /* 内边距：上下10px，左右20px */
+    background: red; /* 红色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 无边框 */
+    border-radius: 4px; /* 圆角4像素 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+}
+
+.cart-summary button:hover { /* 购物车按钮悬停效果 */
+    background: #d60000; /* 悬停时变为深红色 */
+}
+
+/* 登录注册页面特定样式 */
+body > h2 { /* 直接子元素选择器：选择body的直接子元素h2 */
+    margin: 30px 0 20px; /* 外边距：上30px，下20px */
+    text-align: center; /* 文本居中对齐 */
+}
+
+body > input { /* body的直接子元素input */
+    display: block; /* 显示为块级元素 */
+    width: 300px; /* 宽度300像素 */
+    margin: 10px auto; /* 外边距：上下10px，左右自动（水平居中） */
+    padding: 10px; /* 内边距10像素 */
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 4px; /* 圆角4像素 */
+}
+
+body > button { /* body的直接子元素button */
+    display: block; /* 显示为块级元素 */
+    width: 320px; /* 宽度320像素 */
+    margin: 20px auto; /* 外边距：上下20px，左右自动（水平居中） */
+    padding: 10px; /* 内边距10像素 */
+    background: red; /* 红色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 无边框 */
+    border-radius: 4px; /* 圆角4像素 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+}
+
+/* 产品详情页面样式 */
+.detail-container { /* 详情容器 */
+    max-width: 800px; /* 最大宽度800像素 */
+    margin: 20px auto; /* 外边距：上下20px，左右自动（水平居中） */
+    padding: 20px; /* 内边距20像素 */
+    background: white; /* 白色背景 */
+    border-radius: 5px; /* 圆角5像素 */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 阴影效果 */
+}
+
+.detail-container h2 { /* 详情页标题 */
+    margin-top: 0; /* 上外边距为0 */
+}
+
+.detail-container img { /* 详情页图片 */
+    max-width: 100%; /* 最大宽度100%（响应式） */
+    height: auto; /* 高度自动（保持比例） */
+    margin: 20px 0; /* 外边距：上下20px */
+}
+
+.detail-container button { /* 详情页按钮 */
+    padding: 12px 24px; /* 内边距：上下12px，左右24px */
+    background: red; /* 红色背景 */
+    color: white; /* 白色文字 */
+    border: none; /* 无边框 */
+    border-radius: 4px; /* 圆角4像素 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+    font-size: 16px; /* 字体大小16像素 */
+}

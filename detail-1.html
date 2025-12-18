@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>智能手机 P1 - MyShop</title> <!-- 页面标题包含商品名称 -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+    <a href="index.html" class="logo">MyShop</a>
+    <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="cart.html">购物车</a>
+    </nav>
+</header>
+
+<!-- 商品详情容器 -->
+<div class="detail-container"> <!-- 使用detail-container类应用详情页样式 -->
+    <h2>智能手机 P1</h2> <!-- 商品标题 -->
+    
+    <!-- 商品主图 -->
+    <img src="images/p1.jpg" alt="智能手机 P1"> <!-- alt属性提供图片描述，用于无障碍访问 -->
+    
+    <!-- 商品描述 -->
+    <p><strong>产品描述：</strong>高性能智能手机，大内存，长续航，拍照清晰。</p>
+    
+    <!-- 商品价格 -->
+    <!-- style内联样式：红色文字，24像素大小，粗体 -->
+    <p><strong>价格：</strong><span style="color:red;font-size:24px;font-weight:bold;">￥1799</span></p>
+    
+    <!-- 加入购物车按钮 -->
+    <!-- onclick调用addToCart()函数，传递4个参数：商品ID、名称、价格、图片路径 -->
+    <button onclick="addToCart('p1','智能手机 P1',1799,'images/p1.jpg')">
+        加入购物车
+    </button>
+</div>
+
+<!-- 引入JavaScript主文件 -->
+<script src="js/main.js"></script>
+</body>
+</html>

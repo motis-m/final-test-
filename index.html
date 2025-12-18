@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!-- 文档类型声明，告诉浏览器这是HTML5文档 -->
+<html lang="zh-CN"> <!-- HTML根元素，lang属性指定页面语言为简体中文 -->
+<head> <!-- 文档头部，包含元数据和链接资源 -->
+    <meta charset="UTF-8"> <!-- 字符编码声明，确保中文字符正确显示 -->
+    <title>简易商城-首页</title> <!-- 页面标题，显示在浏览器标签页上 -->
+    <link rel="stylesheet" href="css/style.css"> <!-- 链接外部CSS样式表 -->
+</head>
+<body> <!-- 文档主体，包含所有可见内容 -->
+
+<!-- 顶部导航栏 -->
+<header class="top"> <!-- header标签定义页面或区域的页眉 -->
+    <a href="index.html" class="logo">MyShop</a> <!-- 网站logo，href定义超链接地址，class定义CSS类名 -->
+
+    <div class="search-box"> <!-- div是块级容器，用于组织相关元素 -->
+        <!-- 
+            input[type="text"]：文本输入框
+            placeholder：搜索框中的提示文本
+            id="searchInput"：为搜索框指定ID，便于JavaScript操作
+        -->
+        <input type="text" id="searchInput" placeholder="请输入商品关键词（如：手机、服装、电器）">
+        
+        <!-- 
+            button：搜索按钮
+            onclick="searchProduct()"：点击按钮时调用searchProduct()函数
+        -->
+        <button onclick="searchProduct()">搜索</button>
+    </div>
+
+    <nav class="nav"> <!-- nav标签定义导航链接区域 -->
+        <a href="index.html">首页</a> <!-- 超链接，文本内容显示为"首页" -->
+        <a href="login.html">登录</a>
+        <a href="login.html">注册</a> <!-- 注意：登录和注册指向同一个页面 -->
+        <a href="cart.html">购物车</a>
+        <a href="user.html">个人中心</a>
+    </nav>
+</header>
+
+<!-- 主体内容区域 -->
+<div class="container"> <!-- 主容器，使用container类应用样式 -->
+    <aside class="category"> <!-- aside标签定义侧边栏内容 -->
+        <h3>商品分类</h3> <!-- 三级标题，用于分类标题 -->
+        <a href="list.html?category=手机数码">手机数码</a> <!-- 分类链接，?category是查询参数 -->
+        <a href="list.html?category=家用电器">家用电器</a>
+        <a href="list.html?category=服装鞋包">服装鞋包</a>
+        <a href="list.html?category=电脑办公">电脑办公</a>
+        <a href="list.html?category=美妆护肤">美妆护肤</a>
+    </aside>
+
+    <!-- 轮播图区域 -->
+    <div class="aa">
+        <img id="aaImg" src="images/a1.jpg" alt="商城"> <!-- img标签显示图片，id用于JavaScript操作，alt提供替代文本 -->
+    </div>
+</div>
+
+<!-- 推荐商品区域 -->
+<section class="recommend"> <!-- section标签定义文档中的一个区域 -->
+    <h2>热门推荐</h2> <!-- 二级标题 -->
+    <div class="goods"> <!-- 商品容器 -->
+        <div class="item" onclick="goDetail('detail-1.html')"> <!-- onclick是事件处理器，点击时执行JavaScript函数 -->
+            <img src="images/p1.jpg" alt="智能手机 P1"> <!-- src指定图片路径，alt为图片描述 -->
+            <p>智能手机 P1</p> <!-- p标签定义段落 -->
+            <span>￥1799</span> <!-- span是行内元素，用于对文本的一部分进行样式化 -->
+        </div>
+
+        <div class="item" onclick="goDetail('detail-2.html')">
+            <img src="images/p2.jpg" alt="服装鞋包 P2">
+            <p>服装鞋包 P2</p>
+            <span>￥1999</span>
+        </div>
+
+        <div class="item" onclick="goDetail('detail-3.html')">
+            <img src="images/p3.jpg" alt="家用电器 P3">
+            <p>家用电器 P3</p>
+            <span>￥2399</span>
+        </div>
+        
+        <div class="item" onclick="goDetail('detail-1.html')">
+            <img src="images/product1.jpg" alt="商品示例一">
+            <p>商品示例一</p>
+            <span>￥199</span>
+        </div>
+    </div>
+</section>
+
+<script src="js/main.js"></script> <!-- script标签引入外部JavaScript文件 -->
+</body>
+</html>

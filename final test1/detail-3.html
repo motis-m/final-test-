@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8 -->
+    <title>家用电器 P3 - MyShop</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- 引入CSS样式 -->
+</head>
+<body>
+<header class="top">
+    <a href="index.html" class="logo">MyShop</a> <!-- 网站logo -->
+    <nav class="nav">
+        <a href="index.html">首页</a> <!-- 首页导航 -->
+        <a href="cart.html">购物车</a> <!-- 购物车导航 -->
+    </nav>
+</header>
+
+<div class="detail-container"> <!-- 商品详情区域 -->
+    <h2>家用电器 P3</h2> <!-- 商品标题 -->
+    <img src="images/p3.jpg" alt="家用电器 P3"> <!-- 修正alt属性 -->
+    <p><strong>产品描述：</strong>家用电器，融合智能科技与人性化体验。</p>
+    <p><strong>价格：</strong><span style="color:rgb(210, 115, 115);font-size:24px;font-weight:bold;">￥2399</span></p>
+    <button onclick="addToCart('p3','家用电器 P3',2399,'images/p3.jpg')"> <!-- 修正图片路径 -->
+        加入购物车 <!-- 加入购物车功能 -->
+    </button>
+</div>
+
+<script src="js/main.js"></script> <!-- 引入JavaScript -->
+</body>
+</html>

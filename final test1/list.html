@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"> <!-- 设置字符编码 -->
+    <title>商品列表 - MyShop</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- 引入样式文件 -->
+</head>
+<body>
+<header class="top">
+    <a href="index.html" class="logo">MyShop</a> <!-- 网站logo -->
+    <div class="search-box"> <!-- 搜索框 -->
+        <input type="text" placeholder="搜索商品"> <!-- 搜索输入框 -->
+        <button>搜索</button> <!-- 搜索按钮 -->
+    </div>
+    <nav class="nav">
+        <a href="index.html">首页</a> <!-- 首页链接 -->
+        <a href="cart.html">购物车</a> <!-- 购物车链接 -->
+    </nav>
+</header>
+
+<div class="container"> <!-- 主容器 -->
+    <aside class="category"> <!-- 侧边栏分类 -->
+        <h3>商品分类</h3> <!-- 分类标题 -->
+        <a href="list.html?category=手机数码">手机数码</a> <!-- 分类链接 -->
+        <a href="list.html?category=家用电器">家用电器</a>
+        <a href="list.html?category=服装鞋包">服装鞋包</a>
+        <a href="list.html?category=电脑办公">电脑办公</a>
+        <a href="list.html?category=美妆护肤">美妆护肤</a>
+    </aside>
+
+    <div style="flex:1;"> <!-- 商品列表区域 -->
+        <h2>商品列表</h2> <!-- 列表标题 -->
+        <div class="goods"> <!-- 商品容器 -->
+            <div class="item" onclick="goDetail('detail-1.html')"> <!-- 商品项 -->
+                <img src="images/p1.jpg" alt="智能手机 P1"> <!-- 商品图片 -->
+                <p>智能手机 P1</p> <!-- 商品名称 -->
+                <span>￥1799</span> <!-- 商品价格 -->
+            </div>
+            <div class="item" onclick="goDetail('detail-2.html')">
+                <img src="images/p2.jpg" alt="服装鞋包 P2"> <!-- 修正描述 -->
+                <p>服装鞋包 P2</p> <!-- 修正名称 -->
+                <span>￥1999</span>
+            </div>
+            <div class="item" onclick="goDetail('detail-3.html')">
+                <img src="images/p3.jpg" alt="家用电器 P3"> <!-- 修正描述 -->
+                <p>家用电器 P3</p> <!-- 修正名称 -->
+                <span>￥2399</span>
+            </div>
+            <div class="item" onclick="goDetail('detail-1.html')">
+                <img src="images/product1.jpg" alt="商品示例一">
+                <p>商品示例一</p>
+                <span>￥199</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script> <!-- 引入JavaScript -->
+</body>
+</html>
